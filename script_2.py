@@ -73,9 +73,12 @@ A = np.array([
     [f1_f2, f2_f2]
 ])
 
+print()
+print('Matriz A')
 print(A)
 
 """
+Matriz A
 [[0.7128513  0.32993982]
  [0.32993982 0.3549492 ]]
 """
@@ -84,10 +87,12 @@ B = np.array([
     [f_f1],
     [f_f2]
 ])
-
+print()
+print('Matriz B')
 print(B)
 
 """
+Matriz B
 [[0.18433529]
  [0.21988323]]
 """
@@ -97,8 +102,11 @@ A_inv = np.linalg.inv(A)  # Obtenemos la inversa de la matriz A = A-1
 C = A_inv.dot(B)  # Producto punto entre las dos matrices
 
 print('-----------------')
+print()
+print('Matriz C')
 print(C)
 """
+Matriz C
 [[-0.04937769]
  [ 0.66537662]]
 """
@@ -115,6 +123,15 @@ c1 = C[1][0]
 delta = 0
 
 for k in range(0, n):  # Sumatoria
+    """
+    Sumatoria: += 
+    ---
+    y[k])**2 => f(x)^2
+    ----
+    (c0 * y[k] * f1[k]) => c0 <f,f1>
+    ----
+    (c1 * y[k] * f2[k]) => c1 <f,f2>
+    """
     delta += (y[k])**2 - ((c0 * y[k] * f1[k]) + (c1 * y[k] * f2[k]))
 
 
